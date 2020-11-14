@@ -4,9 +4,3 @@
     paragraph.style.background = 'coral';
   }
 })();
-
-(function () {
-  const scriptElement = document.createElement('script');
-  scriptElement.scr = '';
-  document.append(scriptElement);
-})();

@@ -18,7 +18,33 @@
   </code>
   <p>Press <a href="javascript:( function() { alert('Thats sooooo awesome, isnt it?)'); } )()">this script-link</a>.</p>
   <p>Of course calling alert is the basic and the simplest thing we can do. It will be great competition to write something more complex using one string in the href attribute. Do we need this? Not at all ;)</p>
-  <p>We can create a simple script for the href attribute which will inject our complex and awesome script from somewhere. For example from your repo on Github.</p>
-  
+  <p>We can create a simple script for the href attribute which will inject our complex and awesome script from somewhere (for example from your repo on Github):</p>
+  <code>
+    <pre>
+      (function () {
+        const script_url = 'https://github.com/perioad/bookmarklet/blob/main/bookmarklet.js';
+        const scriptElement = document.createElement('script');
+        scriptElement.src = script_url;
+        document.body.append(scriptElement);
+      })();
+    </pre>
+  </code>
+  <p>Let's format it in one line and paste it in a link (don't forget about <span style="color: coral;">javascript:</span>):</p>
+  <code>
+    &lt;a href=&quot;javascript:(function () {const script_url = 'https://github.com/perioad/bookmarklet/blob/main/bookmarklet.js';const scriptElement = document.createElement('script');scriptElement.scr = script_url;document.append(scriptElement);})()&quot;&gt;Press this script-link&lt;/a&gt;
+  </code>
+  <p>And here the content of my <code>bookmarklet.js</code>:</p>
+  <code>
+    <pre>
+      (function () {
+        const paragraphs = document.getElementsByTagName('p');
+        for (let paragraph of paragraphs) {
+          paragraph.style.background = 'coral';
+        }
+      })();
+    </pre>
+  </code>
+  <p>And here our <a href="javascript:(function () {const script_url = 'https://github.com/perioad/bookmarklet/blob/main/bookmarklet.js';const scriptElement = document.createElement('script');scriptElement.src = script_url;document.body.append(scriptElement);})()">script-link</a>.</p>
+
 </body>
 </html>
