@@ -1,0 +1,50 @@
+:root {
+  --primary-background: #121212;
+  --primary-color: rgb(226, 226, 226);
+  --code-color: rgb(240, 240, 240);
+  --code-background: rgb(27, 53, 53);
+  --link-color: rgb(240, 240, 240);
+  --link-background: rgb(37, 56, 32);
+  --background-radius: .2rem;
+}
+
+body {
+  padding: .4rem 2rem;
+  font-family: 'Spartan', sans-serif;
+  background-color: var(--primary-background);
+  color: var(--primary-color);
+}
+
+h1 {
+  text-transform: uppercase;
+  letter-spacing: .2rem;
+}
+
+p {
+  line-height: 1.6;
+}
+
+.code-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+code {
+  display: inline-block;
+  padding: 0 1rem;
+  font-size: 1.2rem;
+  color: var(--code-color);
+  background-color: var(--code-background);
+  border-radius: .2rem;
+  font-family: monospace;
+  white-space: pre;
+}
+
+a {
+  display: inline-block;
+  padding: 0 1rem;
+  border-radius: .2rem;
+  text-decoration: none;
+  color: var(--link-color);
+  background-color: var(--link-background);
+}

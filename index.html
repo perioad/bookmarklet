@@ -3,50 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <title>Bookmarklet</title>
 </head>
 <body>
-  <h1>Bookmarklet? WTF o_O</h1>
+  <h1>Bookmarklet? 😮</h1>
   <hr>
   <p>Hey yo! Do you know that we can execute script from the Chrome's addressbar?</p>
-  <p>Paste this in your address bar: <span style="color: coral;">( function() { alert('Wazzzzzzup!'); } )()</span> and write in front of it <span style="color: coral;">javascript:</span> to get <span style="color: coral;">javascript:( function() { alert('Wazzzzzzup!'); } )()</span> and press Enter.</p>
-  <p>Neat, right?)</p>
-  <p>More over what we can do is to create a link with the href attribute with the value of our script-link.</p>
+  <p>Paste this in your address bar: <code>( function() { alert('Wazzzzzzup!'); } )()</code> and write in front of it <code>javascript:</code> to get <code>javascript:( function() { alert('Wazzzzzzup!'); } )()</code> and press <code>Enter</code>.</p>
+  <p>Neat, right? 😝</p>
+  <p>More over what we can do is to create a link with the href attribute with the value of our script-link:</p>
   <code>
     &lt;a href=&quot;javascript:( function() { alert('How you doin? :D'); } )()&quot;&gt;Press this script-link&lt;/a&gt;
   </code>
-  <p>Press <a href="javascript:( function() { alert('Thats sooooo awesome, isnt it?)'); } )()">this script-link</a>.</p>
-  <p>Of course calling alert is the basic and the simplest thing we can do. It will be great competition to write something more complex using one string in the href attribute. Do we need this? Not at all ;)</p>
-  <p>We can create a simple script for the href attribute which will inject our complex and awesome script from somewhere (for example from your repo on <a href="https://github.com/">Github</a>):</p>
-  <code>
-    <pre>
+  <p>And <a href="javascript:( function() { alert('Thats sooooo awesome, isnt it?)'); } )()">this is</a> what we've got. Press the link.</p>
+  <p>Of course calling alert is the basic and simplest thing we can do. It will be great competition to write something more complex using one string in the href attribute. Do we need this? Not at all ;)</p>
+  <p>We can create a simple script for the href attribute which will inject our complex and awesome script from a server (for example from your repo on <a href="https://github.com/" target="_blank">Github</a>):</p>
+  <div class="code-container">
+    <code>
       (function () {
         const script_url = 'https://perioad.github.io/bookmarklet/bookmarklet.js';
         const scriptElement = document.createElement('script');
         scriptElement.src = script_url;
         document.body.append(scriptElement);
       })();
-    </pre>
-  </code>
-  <p>Let's format it in one line and paste it in a link (don't forget about <span style="color: coral;">javascript:</span>):</p>
-  <code>
-    &lt;a href=&quot;javascript:(function () {const script_url = 'https://perioad.github.io/bookmarklet/bookmarklet.js';const scriptElement = document.createElement('script');scriptElement.scr = script_url;document.append(scriptElement);})()&quot;&gt;Press this script-link&lt;/a&gt;
-  </code>
+    </code>
+  </div>
+  <p>Let's format it in one line and paste it in a link (don't forget about <span>javascript:</span>):</p>
+  <div class="code-container">
+    <code>
+      &lt;a href=&quot;javascript:(function () {const script_url = 'https://perioad.github.io/bookmarklet/bookmarklet.js';const scriptElement = document.createElement('script');scriptElement.scr = script_url;document.append(scriptElement);})()&quot;&gt;
+        Press this script-link
+      &lt;/a&gt;
+    </code>
+  </div>
   <p>And here the content of my <code>bookmarklet.js</code>:</p>
-  <code>
-    <pre>
+  <div class="code-container">
+    <code>
       (function () {
         const paragraphs = document.getElementsByTagName('p');
         for (let paragraph of paragraphs) {
-          paragraph.style.background = 'coral';
+          paragraph.style.background = 'lightpink';
         }
       })();
-    </pre>
-  </code>
-  <p>And here our <a href="javascript:(function () {const script_url = 'https://perioad.github.io/bookmarklet/bookmarklet.js';const scriptElement = document.createElement('script');scriptElement.src = script_url;document.body.append(scriptElement);})()">script-link</a>.</p>
-  <p>So right now if press the link above it will execute the script in the addressbar which pastes a script element on the page which will execute my <code>bookmarklet.js</code> script from <a href="https://github.com/">Github</a> which changes the background color of all <code>p</code> tags on a page.</p>
-  <p>Moreover you can add this <a href="javascript:(function () {const script_url = 'https://perioad.github.io/bookmarklet/bookmarklet.js';const scriptElement = document.createElement('script');scriptElement.src = script_url;document.body.append(scriptElement);})()">script-link</a> to your bookmarks and change the background color of all <code>p</code> tags on any page!</p>
-  <p>I know! That's freakin awesoooome!</p>
-  <p>Thanks <a href="https://shiffman.net/">Daniel Shiffman</a> for the <a href="https://www.youtube.com/watch?v=DloHqUfPbJc">great tutorial</a>.</p>
+    </code>
+  </div>
+  <p>And here our <a href="javascript:(function () {const script_url = 'https://perioad.github.io/bookmarklet/bookmarklet.js';const scriptElement = document.createElement('script');scriptElement.src = script_url;document.body.append(scriptElement);})()">bookmarklet</a>.</p>
+  <p>So right now if we press the link above it will execute the script in the addressbar which pastes a script element on the page which will execute my <code>bookmarklet.js</code> script from <a href="https://github.com/" target="_blank">Github</a> which changes the background color of all <code>p</code> tags on a page.</p>
+  <p>Moreover you can add this <a href="javascript:(function () {const script_url = 'https://perioad.github.io/bookmarklet/bookmarklet.js';const scriptElement = document.createElement('script');scriptElement.src = script_url;document.body.append(scriptElement);})()">bookmarklet</a> to your bookmarks (bookmarklet - bookmark 😉) and change the background color of all <code>p</code> tags on any page!</p>
+  <p>I know! That's awesoooome! 🤪</p>
+  <p>Thanks <a target="_blank" href="https://shiffman.net/">Daniel Shiffman</a> for the <a target="_blank" href="https://www.youtube.com/watch?v=DloHqUfPbJc">great tutorial</a>.</p>
 </body>
 </html>
